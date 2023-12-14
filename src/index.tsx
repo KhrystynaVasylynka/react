@@ -11,7 +11,7 @@ const Header = () => {
 
 const Content = () => {
   return (
-      <div>
+      <React.Fragment>
           <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Quaerat quibusdam tempore recusandae autem fuga praesentium
@@ -25,16 +25,16 @@ const Content = () => {
               Blanditiis, mollitia perferendis eveniet, id veritatis ad rem,
               voluptatem reiciendis voluptas voluptate sequi.
           </p>
-      </div>
+      </React.Fragment>
   )
 }
 
 const App = () => {
   return (
-      <div>
+      <>
           <Header />
           <Content />
-      </div>
+      </>
   )
 }
 
