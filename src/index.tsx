@@ -1,19 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import Header from './Header'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
-
-
-//типи пропсів 
-type HeaderType = {
-  title: string,
-  num?:number
-}
-
-const Header = (props:HeaderType) => {
-  return <h1>Hello world,{props.title} {props.num}</h1>
-}
 
 const Content = () => {
   return (
@@ -38,9 +28,9 @@ const Content = () => {
 const App = () => {
   return (
       <>
-          <Header title="App.js" num={10} />
-          <Header title="React.js"/>
-          <Content  />
+      <Header title="App.js" num={10} bgColor='blue' position/>
+      <Header title="React.js" bgColor='purple'/>
+      <Content  />
       </>
   )
 }
