@@ -1,24 +1,16 @@
+import './Header.css'
+import clsx from 'clsx';
 
-
-//типи пропсів 
 type HeaderType = {
-  title: string,
-	num?: number,
-	bgColor: string
-	position?: boolean
-
+  title: string
+	num?: number
 }
 
-const Header = ({ title,num,bgColor,position}: HeaderType) => {
-	const style = {
-		backgroundColor: bgColor,
-			color: position ? 'white' : 'black',
-			padding: '15px',
-	}
-
+const Header = ({ title,num}: HeaderType) => {
 	return (
-		<h1 style = {style}>
-			
+		<h1
+			className={`title ${num ===10 ? "red" : ""}` }
+			>
 			Hello world,{title} {num}
 		</h1>
 	)
