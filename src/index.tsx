@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom/client'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
-//компонент
 
-const Header = () => {
-  return <h1>Hello world</h1>
+
+//типи пропсів 
+type HeaderType = {
+  title: string,
+  num?:number
+}
+
+const Header = (props:HeaderType) => {
+  return <h1>Hello world,{props.title} {props.num}</h1>
 }
 
 const Content = () => {
@@ -32,8 +38,9 @@ const Content = () => {
 const App = () => {
   return (
       <>
-          <Header />
-          <Content />
+          <Header title="App.js" num={10} />
+          <Header title="React.js"/>
+          <Content  />
       </>
   )
 }
