@@ -1,19 +1,23 @@
 import classes from './Header.module.scss'
-import clsx from 'clsx';
+import clsx from 'clsx'
 
 type HeaderType = {
-  title: string
+    title: string
 	num?: number
 }
 
-const Header = ({ title,num}: HeaderType) => {
-	return (
-		<h1
-			className={classes.title }
-			>
-			Hello world,{title} {num}
-		</h1>
-	)
+const Header = ({ title, num }: HeaderType) => {
+    return (
+        <>
+            <h1
+                className={clsx(`${classes.test}`, {
+                    [classes.red]: num === 10,
+                })}
+            >
+                Hello world,{title} {num} 
+            </h1>
+        </>
+    )
 }
 
 export default Header
