@@ -1,4 +1,6 @@
 import Button from '@mui/material/Button'
+import CartHeader from 'components/CartHeader/CartHeader'
+
 
 type Props = {}
 const Menu = (props: Props) => {
@@ -8,7 +10,8 @@ const Menu = (props: Props) => {
             <Button color="inherit">Products</Button>
             <Button color="inherit">Payment</Button>
             <Button color="inherit">Shipping</Button>
-            <Button color="inherit">Card</Button>
+				<Button color="inherit">Cart</Button>
+				<CartHeader />
         </>
     )
 }
