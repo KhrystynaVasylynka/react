@@ -24,7 +24,6 @@ const Header = (props: Props) => {
                     <Toolbar>
                         <Logo />
                         <Menu />
-                        <CartHeader />
                     </Toolbar>
                 </Container>
             </AppBar>
