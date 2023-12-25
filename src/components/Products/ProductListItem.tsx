@@ -6,7 +6,7 @@ type ProductListItemType = {
     description: string
     type: string
     capacity: string
-    price:number
+    price: number
 }
 
 const ProductListItem = ({
