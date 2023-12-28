@@ -1,4 +1,3 @@
-import Footer from './Footer'
 import Header from './Header'
 import CssBaseline from '@mui/material/CssBaseline'
 import { StyledEngineProvider } from '@mui/material/styles'
