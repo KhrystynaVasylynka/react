@@ -15,20 +15,20 @@ type ProductListItemType = {
 type State = {
     count: number
     color: string
-    disabled: boolean
+    // disabled: boolean
 }
 
 class ProductListItem extends Component<ProductListItemType, State> {
     state = {
         count: 1,
         color: 'green',
-        disabled: true,
+        // disabled: true,
     }
 
     onIncrementClick = () => {
         this.setState((prevState) => ({
             count: prevState.count + 1,
-            disabled: false,
+            // disabled: false,
         }))
     }
 
@@ -36,7 +36,7 @@ class ProductListItem extends Component<ProductListItemType, State> {
         this.setState((prevState) => ({
             count:
                 prevState.count === 1 ? prevState.count : prevState.count - 1,
-            disabled: prevState.count <= 2 ? true : false,
+            // disabled: prevState.count <= 2 ? true : false,
         }))
     }
 
@@ -72,7 +72,7 @@ class ProductListItem extends Component<ProductListItemType, State> {
                         <Button
                             variant="outlined"
                             onClick={() => this.onDecrementClick()}
-                            disabled = {this.state.disabled}
+                            disabled = {this.state.count <=1}
                         >
                             -
                         </Button>
