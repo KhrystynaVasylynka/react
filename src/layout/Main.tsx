@@ -4,7 +4,7 @@ import { Container } from "@mui/material"
 
 type Props = {}
 
-const main = (props: Props) => {
+const Main = (props: Props) => {
 	return (
 		<Container maxWidth="lg" sx={{
 padding:'50px 0',
@@ -15,4 +15,4 @@ padding:'50px 0',
 	)
 }
 
-export default main
+export default Main
