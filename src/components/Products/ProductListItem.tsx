@@ -1,7 +1,7 @@
 import { Button, Card, CardContent, TextField } from '@mui/material'
 import './ProductListItem.css'
 import { useState } from 'react'
-import { count } from 'console'
+
 
 
 type ProductListItemType = {
@@ -10,7 +10,7 @@ type ProductListItemType = {
     type: string
     capacity: string
     price: number
-    image:string
+    image: string
 }
 
 const ProductListItem = ({
