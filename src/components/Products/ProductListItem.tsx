@@ -11,6 +11,7 @@ type ProductListItemType = {
     capacity: string
     price: number
     image: string
+    addProductInCart: (count: number, price: number) => void
 }
 
 const ProductListItem = ({
@@ -20,6 +21,7 @@ const ProductListItem = ({
     capacity,
     price,
     image,
+    addProductInCart
 }: ProductListItemType) => {
 
     const [count, setCount] = useState<number>(1)
@@ -49,11 +51,12 @@ const ProductListItem = ({
                     <Button variant='outlined' onClick={onDecrementClick} disabled ={count<=1}>-</Button>
                     <TextField size='small' value={count } />
                     <Button variant='outlined' onClick={onIncrementClick}>+</Button>
-
+                 
                 </div>
 
                 <div className="btns-wrap">
-                    <Button variant="outlined">Add to cart</Button>
+                    <Button variant="outlined" onClick={() =>addProductInCart(count,price)}
+                    >Add to cart</Button>
                 </div>
             </CardContent>
         </Card>

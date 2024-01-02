@@ -1,7 +1,8 @@
 type Props = {
     cartData: {
         totalCount: number,
-        totalPrice:number,
+        totalPrice: number,
+    
     }
 }
 const CartHeader = ({cartData}: Props) => {
