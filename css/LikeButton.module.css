@@ -1,0 +1,4 @@
+.favorite:hover, .favorite:focus {
+  fill: red;
+  cursor: pointer;
+}

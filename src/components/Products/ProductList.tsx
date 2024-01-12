@@ -3,9 +3,18 @@ import ProductListItem from './ProductListItem'
 import { productsArray } from 'utils/productsArray'
 
 type Props = {
-    addProductInCart: (id:number, count:number) => void
+    addProductInCart: (id: number, count: number) => void
+    likeState: {
+        [id: number]: boolean
+    }
+    changeLikeArticle(id: number, like: boolean): void
 }
-const ProductList = ({ addProductInCart }: Props) => {
+
+const ProductList = ({
+    addProductInCart,
+    likeState,
+    changeLikeArticle,
+}: Props) => {
     return (
         <>
             <Typography
@@ -28,7 +37,6 @@ const ProductList = ({ addProductInCart }: Props) => {
                         price,
                         type,
                         image,
-                        
                     }) => (
                         <Grid item xs={12} sm={6} md={4} key={id}>
                             <ProductListItem
@@ -40,7 +48,8 @@ const ProductList = ({ addProductInCart }: Props) => {
                                 price={price}
                                 image={image}
                                 addProductInCart={addProductInCart}
-
+                                isLiked={likeState[id]}
+                                changeLikeArticle={changeLikeArticle}
                             />
                         </Grid>
                     )

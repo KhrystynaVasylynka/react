@@ -15,6 +15,9 @@ type ProductsInCartType = {
     [id: number]: number
 }
 
+type likeArticleType = {
+    [id: number]: boolean
+}
 const App = (props: Props) => {
     const [productsInCart, setProductsInCart] = useState<ProductsInCartType>({
         1: 5,
@@ -34,9 +37,20 @@ const App = (props: Props) => {
     const changeProductQuantity = (id: number, count: number) => {
         setProductsInCart((prevState) => ({
             ...prevState,
-            [id]:count,
+            [id]: count,
         }))
     }
+
+    const [likeState, setLikeState] = useState<likeArticleType>({})
+
+    const changeLikeArticle = (id: number) => {
+        setLikeState((prevState) => ({
+            ...prevState,
+            [id]: !prevState[id],
+        }
+        ))
+    }
+
     return (
         <>
             <StyledEngineProvider injectFirst>
@@ -52,14 +66,20 @@ const App = (props: Props) => {
                         <Route
                             path="/"
                             element={
-                                <Home addProductInCart={addProductInCart} />
+                                <Home
+                                    addProductInCart={addProductInCart}
+                                    likeState={likeState}
+                                    changeLikeArticle={changeLikeArticle}
+                                />
                             }
                         />
                         <Route
                             path="cart"
                             element={
                                 <CartPage
-                                    changeProductQuantity={changeProductQuantity}
+                                    changeProductQuantity={
+                                        changeProductQuantity
+                                    }
                                     removeProductFromCart={
                                         removeProductsFromCart
                                     }

@@ -29,6 +29,7 @@ const CartProductList = ({
                     productCount={productsInCart[+productId]}
                     removeProductFromCart={removeProductFromCart}
                     changeProductQuantity={changeProductQuantity}
+                   
               />
             ))}
         </>

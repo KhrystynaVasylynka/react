@@ -2,6 +2,7 @@ import { Button, Card, CardContent } from '@mui/material'
 import './ProductListItem.css'
 import { useState } from 'react'
 import Quantity from 'components/Quantity/Quantity'
+import LikeButton from 'components/likeButton/LikeButton'
 
 type ProductListItemType = {
     id: number
@@ -12,6 +13,9 @@ type ProductListItemType = {
     price: number
     image: string
     addProductInCart: (id: number, count: number) => void
+    isLiked: boolean
+
+    changeLikeArticle(id: number, like: boolean): void
 }
 
 const ProductListItem = ({
@@ -23,6 +27,9 @@ const ProductListItem = ({
     price,
     image,
     addProductInCart,
+    isLiked,
+
+    changeLikeArticle,
 }: ProductListItemType) => {
     const [count, setCount] = useState<number>(1)
 
@@ -59,6 +66,12 @@ const ProductListItem = ({
                     >
                         Add to cart
                     </Button>
+                    <LikeButton
+                        key={id}
+                        isLiked={isLiked}
+                        id={id}
+                        changeLikeArticle={changeLikeArticle}
+                    />
                 </div>
             </CardContent>
         </Card>
